@@ -1,0 +1,23 @@
+  <div class="filter-container">
+    <form>
+      <div class="filter-container-label">
+        <label>Filters</label>
+        <a *ngIf="isFilterApplied" (click)="clearAllFilters()" title="Clear Filter" style="float: right;">X</a>
+      </div>
+      <div *ngFor="let filter of filters" class="filter">
+        <p>{{filter.name}}</p>
+          <ul>
+              <li *ngFor="let v of filter.values">
+                  <label>
+                      <input type="checkbox" 
+                        name="{{filter.name}}" 
+                        value="{{v}}" 
+                        (click)="filterByBrand($event)"
+                        [checked]="isChecked(filter.name, v)" /> 
+                      {{v}}
+                  </label>
+              </li>
+          </ul>       
+      </div>  
+    </form>  
+  </div>

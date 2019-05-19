@@ -1,0 +1,36 @@
+/* product detail */
+
+.product-detail {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-detail__image {
+    order: 1;
+    margin-right: 50px;
+}
+
+.product-detail__info {
+    order: 2;
+}
+
+.product-detail__measurement {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-detail__price {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.product-detail__desc {
+    line-height: 1.4;
+    margin-block-end: 20px;
+}
+
+.product-detail__action {
+    bottom: 0;
+    position: relative;
+    text-align: center;
+}

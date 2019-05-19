@@ -1,0 +1,25 @@
+ <div style="margin-left: 10px;" *ngIf="productDetail">
+  <h4>Browse / {{productDetail.name}}</h4>
+  <div class="product-detail">
+    <div class="product-detail__image">
+      <img src="./assets/{{productDetail.image}}" alt="" width="400" />
+    </div>
+    <div class="product-detail__info">
+      <div class="product-detail__measurement">{{productDetail.measurement}}</div>
+      <div class="product-detail__price">${{productDetail.price}}</div>
+      <div class="product-detail__desc">{{productDetail.desc}}</div>
+      <div class="product-detail__action"></div>
+      <div class="product-action product-detail__action" *ngIf="!addDisabled" >
+        <button (click)="addToCart()">Add To Cart</button>
+      </div>
+      <div class="product-action product-detail__action product-action-counter" *ngIf="addedCount">
+        <a (click)="downCount()" class="product-action-counter__down" title="Decrement">-</a>
+        <span class="product-action-counter__value">{{addedCount}}</span>
+        <a (click)="upCount()" class="product-action-counter__up" title="Increment">+</a>
+      </div>
+    </div>
+  </div>  
+</div> 
+
+<div *ngIf="!productDetail" style="margin-top: 10px; padding-left: 10px;">No product found.</div>
+

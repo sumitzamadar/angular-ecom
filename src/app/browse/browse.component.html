@@ -1,0 +1,10 @@
+<h4 class="page-title">Browse</h4>
+<ul *ngIf="products.length" class="flex-container" id="product-list">
+  <li *ngFor="let product of products" class="flex-item">
+    <app-product-preview [product]="product"></app-product-preview>
+  </li>
+</ul>
+
+<div *ngIf="!products.length" style="margin-top: 10px; padding-left: 10px;">No products found.</div>
+
+

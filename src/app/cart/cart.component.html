@@ -1,0 +1,22 @@
+<h4 class="page-title">Cart</h4>
+<div class="cart-container" *ngIf="products.length">
+  <div class="cart-items">
+    <ul *ngIf="products.length" class="flex-container" id="product-list">
+      <li *ngFor="let product of products" class="flex-item">
+        <app-product-preview [product]="product" [cart]="true" (removed)="onRemoved($event)"></app-product-preview>
+      </li>
+    </ul>
+  </div>
+  <div class="cart-price">
+    <h4>Price</h4>
+    <div>
+      <p>Total Counts: {{totalProducts}}</p>
+      <p>Total Price: {{totalPrice}}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!products.length" class="browse-link">
+  Your cart is empty. Add some from <a [routerLink]="['/browse']">here</a>. 
+</div>
+

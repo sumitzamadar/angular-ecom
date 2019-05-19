@@ -1,0 +1,27 @@
+<div class="product-preview" [ngClass]="{'cart-product-preview': cart}">
+    <div class="product-image">
+        <a [routerLink]="['/product', product.id]"> 
+            <img src="./assets/{{product.image}}" alt="{{product.name}}" />
+        </a>
+    </div>
+    <div class="product-info">
+        <a [routerLink]="['/product', product.id]" title="{{product.name}}"> 
+            <span class="product-name">{{product.name}}</span>
+        </a>
+        <div class="product-measurement">{{product.measurement}}</div>
+        <div class="product-price">${{product.price}}</div>
+    </div>
+    <div class="product-action" *ngIf="!cart || !addedCount">
+        <button *ngIf="!addDisabled" (click)="addToCart()">Add To Cart</button>
+    </div>
+    <div class="product-action product-action-counter" *ngIf="addedCount">
+       <a (click)="downCount()" class="product-action-counter__down" title="Decrement">-</a>
+       <span class="product-action-counter__value">{{addedCount}}</span>
+       <a (click)="upCount()" class="product-action-counter__up" title="Increment">+</a>
+    </div>
+
+    <div class="product-action" *ngIf="cart">
+        <button (click)="removeFromCart()" [disabled]="removeDisabled">Remove</button>
+    </div> 
+</div> 
+

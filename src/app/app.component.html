@@ -1,0 +1,27 @@
+<header class="header" style="display: flex; flex-direction: row;">
+    <div style="align-self: center;
+    margin-left: 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 180px;
+    font-size: 30px;">
+    <a href="/" style="color: #fff;">ecom</a>
+    </div>    
+    <nav style="order: 1;
+    display: flex;
+    flex-basis: 100%;
+    justify-content: flex-end;">
+        <ul class="navigation">
+            <li><a [routerLink]="['browse']" [routerLinkActive]="['active']" *ngIf="isBrowseVisible">Browse</a></li>
+            <li><a [routerLink]="['cart']" [routerLinkActive]="['active']" *ngIf="isCartVisible">Cart</a></li>
+        </ul>  
+    </nav>
+</header>
+<div class="wrapper">
+  <aside class="sidebar" *ngIf="isFiltersVisible">
+      <app-browse-filters></app-browse-filters>
+  </aside> 
+  <article class="main">
+        <router-outlet></router-outlet> 
+  </article>
+</div>

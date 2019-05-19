@@ -1,0 +1,224 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* layout */
+html {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-family: "Helvetica","Arial",sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.wrapper {
+  display: flex;  
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.wrapper > * {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100%;
+  padding-bottom: 50px;
+}
+
+.header {
+  background: #ee4054;
+  color: #fff;
+  padding: 0;
+}
+
+.main {
+  text-align: left;
+}
+
+.sidebar {
+  text-align: left;
+}
+
+@media all and (min-width: 768px) {
+  .sidebar { flex: 0 0 200px; }
+}
+
+@media all and (min-width: 768px) {
+  .main    { flex: 3 0px; }
+  .sidebar { order: 1; } 
+  .main    { order: 2; }
+}
+
+/* filter */
+.filter-container {
+  position: relative; 
+  background: #fff; 
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, .4); 
+  margin: 10px;
+}
+
+.filter-container-label {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filter {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filter  p {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;  
+}
+
+.filter  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 20px 20px;   
+}
+
+.filter  ul li input[type="checkbox"] {
+  margin-left: 0;
+}
+
+
+/* navigation */
+.navigation {
+  list-style: none;
+  margin: 0; 
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  justify-content: flex-end;
+}
+
+.navigation a {
+  color: white;
+  display: block;
+  padding: 15px 20px; 
+  text-decoration: none;
+}
+
+.navigation a:hover,
+.product-action button:hover,
+a.active {
+  background: #de142b;
+}
+
+
+/* products */
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.flex-item {
+  background: #fff;
+  width: 170px;
+  height: 350px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.flex-item:hover {
+  box-shadow: 0 3px 16px 0 rgba(0, 0, 0, .11);
+}
+
+/* product */
+.product-preview {
+    background: #fff;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-action {
+    align-self: center;
+    position: absolute;
+    bottom: 5px;
+}
+
+.product-action button,
+.product-action-counter {
+  background-color: #ee4054;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 120px;
+  font-weight: 400;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.product-action button[disabled] {
+  opacity: 0.3;
+}
+
+.product-action-counter {
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  cursor: default;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-action-counter__down {
+  order: 1;
+  flex-grow: 1;
+  font-size: 25px;
+}
+
+.product-action-counter__value {
+  order: 2;
+  flex-grow: 3;
+}
+
+.product-action-counter__up {
+  order: 3;
+  flex-grow: 1;
+  font-size: 25px;
+}
+
